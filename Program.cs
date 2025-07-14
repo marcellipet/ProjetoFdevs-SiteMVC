@@ -1,3 +1,6 @@
+using Microsoft.Extensions.DependencyInjection;
+using ProjetoFdevs.Data;
+
 namespace ProjetoFdevs
 {
     public class Program
@@ -10,6 +13,7 @@ namespace ProjetoFdevs
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
+            builder.Services.AddEntityFrameworkSqlServer().AddDbContext<BancoContext>();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
