@@ -9,7 +9,12 @@ namespace ProjetoFdevs.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            HomeModel homeModel = new HomeModel();
+
+            homeModel.Nome = "Tal";
+            homeModel.Email = "tal@gmail.com";
+
+            return View(homeModel);
         }
 
         public IActionResult Privacy()
